@@ -7,11 +7,13 @@ class NavigationDrawerController extends GetxController {
 
   navigateToPage(int index) {
     if (index == 0) {
-      Get.toNamed(Routes.PHOTO);
+      Get.toNamed(Routes.SNACKBAR);
     } else if (index == 1) {
-      Get.toNamed(Routes.VIDEO);
+      Get.toNamed(Routes.DIALOG);
     } else if (index == 2) {
-      Get.toNamed(Routes.CHAT);
+      Get.toNamed(Routes.PHOTO);
+    } else if (index == 3) {
+      Get.toNamed(Routes.VIDEO);
     }
   }
 }

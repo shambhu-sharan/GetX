@@ -24,9 +24,17 @@ class NavigationDrawer extends StatelessWidget {
                 : Colors.black,
           ),
           buildDrawerItem(
+              icon: Icons.chat,
+              text: "Dialog",
+              onTap: () => navigate(1),
+              tileColor: Get.currentRoute == Routes.DIALOG ? Colors.blue : null,
+              textIconColor: Get.currentRoute == Routes.DIALOG
+                  ? Colors.white
+                  : Colors.black),
+          buildDrawerItem(
             icon: Icons.photo,
             text: "Photo",
-            onTap: () => navigate(1),
+            onTap: () => navigate(2),
             tileColor: Get.currentRoute == Routes.PHOTO ? Colors.blue : null,
             textIconColor:
                 Get.currentRoute == Routes.PHOTO ? Colors.white : Colors.black,
@@ -34,19 +42,11 @@ class NavigationDrawer extends StatelessWidget {
           buildDrawerItem(
             icon: Icons.video_call,
             text: "Video",
-            onTap: () => navigate(2),
+            onTap: () => navigate(3),
             tileColor: Get.currentRoute == Routes.VIDEO ? Colors.blue : null,
             textIconColor:
                 Get.currentRoute == Routes.VIDEO ? Colors.white : Colors.black,
           ),
-          buildDrawerItem(
-              icon: Icons.chat,
-              text: "Chat",
-              onTap: () => navigate(3),
-              tileColor: Get.currentRoute == Routes.CHAT ? Colors.blue : null,
-              textIconColor: Get.currentRoute == Routes.CHAT
-                  ? Colors.white
-                  : Colors.black),
         ],
       ),
     );
@@ -92,13 +92,13 @@ class NavigationDrawer extends StatelessWidget {
     if (index == 0) {
       Get.toNamed(Routes.SNACKBAR);
     } else if (index == 1) {
-      Get.toNamed(Routes.PHOTO);
+      Get.toNamed(Routes.DIALOG);
     } else if (index == 2) {
-      Get.toNamed(Routes.VIDEO);
+      Get.toNamed(Routes.PHOTO);
     } else if (index == 3) {
-      Get.toNamed(Routes.CHAT);
+      Get.toNamed(Routes.VIDEO);
     } else {
-      // Get.toNamed(Routes.SNACKBAR);
+      Get.toNamed(Routes.SNACKBAR);
     }
   }
 }
