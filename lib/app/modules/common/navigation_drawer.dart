@@ -16,11 +16,12 @@ class NavigationDrawer extends StatelessWidget {
           ),
           buildDrawerItem(
             icon: Icons.home,
-            text: "Home",
+            text: "SnackBar",
             onTap: () => navigate(0),
-            tileColor: Get.currentRoute == Routes.HOME ? Colors.blue : null,
-            textIconColor:
-                Get.currentRoute == Routes.HOME ? Colors.white : Colors.black,
+            tileColor: Get.currentRoute == Routes.SNACKBAR ? Colors.blue : null,
+            textIconColor: Get.currentRoute == Routes.SNACKBAR
+                ? Colors.white
+                : Colors.black,
           ),
           buildDrawerItem(
             icon: Icons.photo,
@@ -89,7 +90,7 @@ class NavigationDrawer extends StatelessWidget {
 
   navigate(int index) {
     if (index == 0) {
-      Get.toNamed(Routes.HOME);
+      Get.toNamed(Routes.SNACKBAR);
     } else if (index == 1) {
       Get.toNamed(Routes.PHOTO);
     } else if (index == 2) {
@@ -97,7 +98,7 @@ class NavigationDrawer extends StatelessWidget {
     } else if (index == 3) {
       Get.toNamed(Routes.CHAT);
     } else {
-      Get.toNamed(Routes.HOME);
+      // Get.toNamed(Routes.SNACKBAR);
     }
   }
 }
